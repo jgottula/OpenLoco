@@ -5,7 +5,7 @@ using namespace openloco::interop;
 
 namespace openloco::townmgr
 {
-    static loco_global_array<town, 80, 0x005B825C> _towns;
+    static loco_global<town[80], 0x005B825C> _towns;
 
     std::array<town, max_towns> towns()
     {
@@ -19,6 +19,6 @@ namespace openloco::townmgr
         {
             return nullptr;
         }
-        return &_towns[id];
+        return &_towns[(size_t)id];
     }
 }
