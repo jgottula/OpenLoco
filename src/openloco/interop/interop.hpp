@@ -138,6 +138,8 @@ namespace openloco::interop
         typedef type& reference;
         typedef const type& const_reference;
 
+        static constexpr bool is_array = false;
+
         operator reference()
         {
             return addr<TAddress, T>();
@@ -270,6 +272,8 @@ namespace openloco::interop
         typedef type& reference;
         typedef const type& const_reference;
         typedef loco_global_iterator<T> iterator;
+
+        static constexpr bool is_array = true;
 
         operator pointer()
         {
