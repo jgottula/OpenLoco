@@ -231,8 +231,9 @@ namespace openloco::interop
         }
         loco_global_iterator& operator++(int)
         {
+            loco_global_iterator<T> tmp = *this;
             ++_ptr;
-            return *this;
+            return tmp;
         }
         loco_global_iterator& operator--()
         {
