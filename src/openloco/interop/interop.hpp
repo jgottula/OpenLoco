@@ -179,10 +179,11 @@ namespace openloco::interop
             return *this;
         }
 
-        loco_global operator++(int)
+        T operator++(int)
         {
+            T tmp = addr<TAddress, T>();
             addr<TAddress, T>()++;
-            return *this;
+            return tmp;
         }
 
         loco_global& operator--()
@@ -191,10 +192,11 @@ namespace openloco::interop
             return *this;
         }
 
-        loco_global operator--(int)
+        T operator--(int)
         {
+            T tmp = addr<TAddress, T>();
             addr<TAddress, T>()--;
-            return *this;
+            return tmp;
         }
 
         reference operator*()
